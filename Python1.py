@@ -89,3 +89,74 @@ for i in arr: #inの後にリストを書くことによって、リストの中
     print(i)
 
 #############関数################
+
+#関数の定義
+##def関数名(引数)
+
+def say_hello(greeting):
+    print(greeting)
+
+say_hello("hello world")
+
+hello = say_hello
+hello("Good Morning")
+
+
+def add(num01,num02):
+    print(num01+num02)
+
+add(6,2)
+
+
+def add2(num01,num02):
+    return(num01+num02)
+
+print(add2(5,2))
+
+
+def add3(num01,num02):
+    return(num01+num02)
+
+add_result=add3(2,7)
+print(add_result)
+
+####################クラス####################
+
+#クラス内での「変数」＝「アトリビュート」
+#クラス内での「関数」＝「メソッド」
+
+class Student:
+    #メソッドは関数と違って必ず1つ引数が必要
+    #メソッドに渡したい引数が無い場合、selfを記述する
+    #メソッドに渡したい引数が1つの場合、selfを含めた合計2つの引数が必要 def avg(self,引数1)
+    
+    def avg(self,math,english):
+        print((math + english) / 2)
+
+#クラスはクラスから作られたインスタンスを変数に代入してから使う(インスタンス化,オブジェクト化,オブジェクト生成)
+#クラスはインスタンスになって初めて使える
+
+a001 = Student()
+a001.avg(30,70)
+a001.name = "sato" #アトリビュートの定義
+print(a001.name)
+
+#print(a001.gender) #未定義のアトリビュートなのでエラー
+
+
+class Student:
+
+#コンストラクタの定義
+#コンストラクタ～インスタンス化するときに、自動的に実行されるメソッド    
+    def __init__(self):
+        self.name = ""
+    
+    def avg(self,math,english):
+        print((math + english) / 2)
+
+a001 = Student()
+a001.name = "ito"
+print(a001.name)
+
+a002 = Student()
+print(a002.name) 
